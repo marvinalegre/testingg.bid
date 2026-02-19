@@ -1,7 +1,7 @@
 services:
   file-server:
     image: nginx:alpine
-    container_name: testing.testingg.bid
+    container_name: www.testingg.bid
     restart: unless-stopped
     networks:
       - web-traffic

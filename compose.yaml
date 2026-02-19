@@ -1,7 +1,7 @@
 services:
-  file-server:
+  www:
     image: nginx:alpine
-    container_name: www.testingg.bid
+    container_name: www
     restart: unless-stopped
     networks:
       - web-traffic
@@ -9,9 +9,9 @@ services:
       - ./www:/usr/share/nginx/html:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.file-server.rule=Host(`www.testingg.bid`)"
-      - "traefik.http.routers.file-server.entrypoints=websecure"
-      - "traefik.http.routers.file-server.tls.certresolver=myresolver"
+      - "traefik.http.routers.www.rule=Host(`www.testingg.bid`)"
+      - "traefik.http.routers.www.entrypoints=websecure"
+      - "traefik.http.routers.www.tls.certresolver=myresolver"
 
 networks:
   web-traffic:
